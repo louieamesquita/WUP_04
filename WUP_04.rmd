@@ -53,7 +53,7 @@ ggplot(thedata, aes(x = DEGREE, y = WORDSUM, fill = DEGREE)) +
   labs(title = "Fancy Box Plot of WORDSUM by DEGREE") +
   theme_minimal()
 ```
-
+So LT high school will not over lap Junior College or Graduate. High School will not over lap Graduate as well. As a Guess their are gonna be some difference between the 4.
 
 ### Numerical Descriptive Results
 
