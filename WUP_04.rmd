@@ -11,7 +11,12 @@ output:
 require(knitr)
 require(tidyverse)
 require(tigerstats)
+thedata<-read.csv(file="GSScsv.csv")
+```
 
+```{r eval=FALSE}
+thedata <- thedata %>%
+mutate(across(where(is.character), as.factor))
 ```
 
 # Introduction
@@ -26,6 +31,9 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 <!--Mention that you intend to use chatGPT to the greatest extent possible. Give credit to chatGPT when you use it to create code in your report. Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
+First we are trying to look at the data to see what we have and to figure out what code to use. So we conclude that we have a numerical type of problem
+
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
@@ -35,6 +43,17 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+# Plotting the fancy box plot
+ggplot(thedata, aes(x = DEGREE, y = WORDSUM, fill = DEGREE)) +
+  geom_boxplot(outlier.shape = 16, outlier.colour = "red", outlier.fill = "red",
+               notch = TRUE, notchwidth = 0.5) +
+  scale_fill_brewer(palette = "Set1") +
+  labs(title = "Fancy Box Plot of WORDSUM by DEGREE") +
+  theme_minimal()
+```
+
 
 ### Numerical Descriptive Results
 
