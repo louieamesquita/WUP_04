@@ -57,6 +57,10 @@ So LT high school will not over lap Junior College or Graduate. High School will
 
 ### Numerical Descriptive Results
 
+```{r}
+favstats(WORDSUM~DEGREE,data=thedata)
+```
+So there is a difference with GRADUATE and LT high school, along with HIGH school.but we must do further test to see if there are a difference between the other results.
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ## Inferential Results
